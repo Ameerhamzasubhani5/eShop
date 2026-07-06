@@ -3,8 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Moon, Sun, Search, ShoppingBag, Menu, X } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Search, ShoppingBag, Menu, X } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {Input} from "@/components/ui/input"
 import {
@@ -17,6 +16,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { fetchCurrentUser, logoutUser } from "@/store/slices/authSlice";
 import { fetchCart } from "@/store/slices/cartSlice";
 import { useApiFetch } from "@/lib/useApiFetch";
+import { ThemeToggle } from "@/components/theme-toggle";
 import type { Category } from "@/types";
 
 function initials(name: string): string {
@@ -29,7 +29,6 @@ function initials(name: string): string {
 }
 
 export function Navbar() {
-  const { setTheme } = useTheme();
   const router = useRouter();
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.auth.user);
@@ -161,23 +160,7 @@ export function Navbar() {
                 Sign In
               </Link>
             )}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                  <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                  <span className="sr-only">Toggle theme</span>
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  Dark
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Search and Icons */}
@@ -284,23 +267,7 @@ export function Navbar() {
                     Sign In
                   </Link>
                 )}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                      <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                      <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                      <span className="sr-only">Toggle theme</span>
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => setTheme("light")}>
-                      Light
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("dark")}>
-                      Dark
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <ThemeToggle />
               </div>
             </div>
           </div>

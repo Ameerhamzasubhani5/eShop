@@ -16,7 +16,8 @@ function index() {
       <div className="flex flex-col lg:flex-row w-full min-h-125 lg:min-h-165.75 justify-between items-center relative bg-image-home px-4 sm:px-8 lg:px-30 py-8 lg:py-0">
         {/* Left Content */}
         <div className="flex-col w-full lg:w-1/2 space-y-4 lg:space-y-6 text-center lg:text-left">
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          {/* Explicit dark text: the hero photo background stays light in both themes */}
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </div>
           <div className="flex-col space-y-4 lg:space-y-6">

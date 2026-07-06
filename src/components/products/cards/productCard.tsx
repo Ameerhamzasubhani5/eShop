@@ -27,7 +27,7 @@ function ProductCards({ image, title, rating, price, oldPrice, discount }: Produ
       </div>
 
       {/* Title */}
-      <h3 className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 group-hover:text-gray-900 transition-colors">
+      <h3 className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200 line-clamp-2 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
         {title}
       </h3>
 
@@ -72,7 +72,7 @@ function ProductCards({ image, title, rating, price, oldPrice, discount }: Produ
 
       {/* Price */}
       <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-3">
-        <p className="text-sm sm:text-lg font-bold text-gray-900">${price}</p>
+        <p className="text-sm sm:text-lg font-bold text-gray-900 dark:text-gray-100">${price}</p>
 
         {oldPrice && (
           <p className="text-sm sm:text-lg text-gray-400 line-through">${oldPrice}</p>

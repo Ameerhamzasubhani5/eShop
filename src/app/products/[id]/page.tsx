@@ -206,7 +206,9 @@ export default function ProductDetail() {
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`px-4 py-2 rounded-lg border text-sm transition ${
-                      currentSize === size ? "bg-black text-white" : "bg-gray-100 hover:bg-gray-200"
+                      currentSize === size
+                        ? "bg-black text-white dark:bg-white dark:text-black"
+                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                     }`}
                   >
                     {size}
@@ -236,7 +238,7 @@ export default function ProductDetail() {
             <button
               onClick={handleAddToCart}
               disabled={addToCartStatus === "adding"}
-              className="flex-1 bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-60"
+              className="flex-1 bg-black text-white dark:bg-white dark:text-black py-3 rounded-lg font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition disabled:opacity-60"
             >
               {addToCartStatus === "adding"
                 ? "Adding..."
@@ -259,13 +261,13 @@ export default function ProductDetail() {
               }
               className={`relative pb-3 text-base md:text-2xl font-medium  ${
                 activeTab === tab.toLowerCase().replace(/\s+/g, "")
-                  ? "text-black"
+                  ? "text-black dark:text-white"
                   : "text-gray-500"
               }`}
             >
               {tab}
               {activeTab === tab.toLowerCase().replace(/\s+/g, "") && (
-                <span className="absolute left-0 -bottom-px h-[1.5px] w-full bg-black" />
+                <span className="absolute left-0 -bottom-px h-[1.5px] w-full bg-black dark:bg-white" />
               )}
             </button>
           ))}
@@ -274,7 +276,7 @@ export default function ProductDetail() {
         {/* Reviews Header */}
         {activeTab === "rating&reviews" && (
           <div className="flex justify-between items-center px-4 pb-4 my-10">
-            <h2 className="text-lg font-semibold text-gray-900">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               All Reviews <span className="text-gray-400 text-sm">(451)</span>
             </h2>
             <div className="flex items-center gap-3">
@@ -286,7 +288,7 @@ export default function ProductDetail() {
               </div>
 
               {/* Write a Review Button */}
-              <button className="bg-black text-white px-4 py-1.5 rounded-md text-sm font-medium">
+              <button className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 rounded-md text-sm font-medium">
                 Write a Review
               </button>
             </div>

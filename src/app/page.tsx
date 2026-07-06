@@ -9,16 +9,12 @@ import ReviewSection from '@/components/sections/reviewSection/page';
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen">
-      {/* <Navbar /> */}
-      <main className="w-full max-w-7xl mx-auto">
+      <main className="w-full max-w-7xl mx-auto min-h-screen">
         <HeroSection/>
         <NewArrivalSection/>
         <TopSellingSection/>
         <BrowseByStyle/>
         <ReviewSection/>
       </main>
-      {/* <Footer/> */}
-    </div>
   );
 }

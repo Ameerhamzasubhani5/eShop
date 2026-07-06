@@ -37,7 +37,7 @@ const CartCard: React.FC<CartCardProps> = ({
       />
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="text-sm font-medium text-gray-900 truncate">{title}</h3>
+          <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">{title}</h3>
           {onRemove && (
             <button
               onClick={onRemove}
@@ -50,7 +50,7 @@ const CartCard: React.FC<CartCardProps> = ({
         </div>
         {size && <p className="text-xs text-gray-500 mt-1">Size: {size}</p>}
         {color && <p className="text-xs text-gray-500">Color: {color}</p>}
-        <p className="text-lg font-semibold text-gray-900 mt-2">${price}</p>
+        <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-2">${price}</p>
         <div className="flex items-center gap-2 mt-3">
           <button
             onClick={onDecrement}
@@ -59,7 +59,7 @@ const CartCard: React.FC<CartCardProps> = ({
           >
             -
           </button>
-          <span className="text-sm font-medium text-gray-700 min-w-5 text-center">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 min-w-5 text-center">
             {quantity}
           </span>
           <button

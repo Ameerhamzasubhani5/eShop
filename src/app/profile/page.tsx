@@ -122,7 +122,7 @@ function ProfilePage() {
                 <Link
                   key={order.id}
                   href={`/orders/${order.id}`}
-                  className="flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                  className="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
                   <div>
                     <p className="text-sm font-medium">Order #{order.id}</p>

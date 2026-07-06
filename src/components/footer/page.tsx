@@ -13,7 +13,7 @@ import googlePay from "@/../public/images/googlePay.png";
 
 function index() {
   return (
-    <footer className="relative flex justify-center bg-[#F0F0F0] space-y-7 text-gray-700 min-h-[400px] sm:min-h-[499px]">
+    <footer className="relative flex justify-center bg-[#F0F0F0] space-y-7 text-gray-700 min-h-100 sm:min-h-124.75 mt-12 sm:mt-16 lg:mt-24">
       {/* Newsletter Section */}
       <div className="absolute w-[90%] max-w-6xl h-auto sm:h-[200px]  rounded-2xl sm:rounded-4xl bg-black text-white px-6 sm:px-8 lg:px-12 py-8 sm:py-10 flex flex-col lg:flex-row justify-between items-center -top-12 sm:-top-16 lg:-top-24 space-y-6 lg:space-y-0">
         {/* Newsletter Section */}
